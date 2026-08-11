@@ -1,0 +1,121 @@
+.about {
+  overflow: hidden;
+}
+
+.orb {
+  top: 20%;
+  right: -15%;
+  opacity: 0.5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 3rem;
+}
+
+/* Avatar */
+.avatarWrap { display: flex; justify-content: center; }
+
+.avatarCard {
+  border-radius: 1.5rem;
+  padding: 3px;
+  width: 240px;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatarGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-ether), var(--color-spectral));
+  opacity: 0.15;
+  border-radius: inherit;
+}
+
+.avatarInner {
+  width: 100%;
+  height: 100%;
+  border-radius: calc(1.5rem - 3px);
+  background: var(--bg-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--color-ether), var(--color-spectral));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.03em;
+}
+
+.avatarInitial { display: block; }
+
+/* Content */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bio {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+/* Terminal */
+.terminal {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.terminalHeader {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--border-glass);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+.red    { background: #FF5F57; }
+.yellow { background: #FFBD2E; }
+.green  { background: #28C840; }
+
+.terminalTitle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-mercury-dim);
+  margin-left: 0.5rem;
+}
+
+.terminalBody {
+  list-style: none;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.terminalLine {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+.termKey  { color: var(--color-ether); }
+.termSep  { color: var(--color-mercury-dim); }
+.termVal  { color: var(--color-spectral); }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .avatarCard { width: 180px; height: 210px; font-size: 4rem; }
+}

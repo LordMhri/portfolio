@@ -1,0 +1,75 @@
+.hero {
+  overflow: hidden;
+  padding-top: 5rem; /* account for fixed nav */
+}
+
+.orb1 {
+  top: -10%;
+  right: -5%;
+  opacity: 0.7;
+}
+
+.orb2 {
+  bottom: 5%;
+  left: -8%;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  max-width: 1250px;
+}
+
+.label {
+  margin-bottom: 0;
+}
+
+.heading {
+  font-size: clamp(2.6rem, 7vw, 5.8rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  background: linear-gradient(
+    135deg,
+    var(--color-mercury) 28%,
+    var(--color-ether) 78%,
+    var(--color-spectral) 120%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.title {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--color-mercury-dim);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  max-width: 28rem;
+  letter-spacing: 0.01em;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.35rem;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 600px) {
+  .scrollIndicator {
+    display: none;
+  }
+}

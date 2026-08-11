@@ -1,0 +1,67 @@
+.skills {
+  overflow: hidden;
+}
+
+.groups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.group {
+  border-radius: 1rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.group::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-ether-dim), transparent 60%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.group:hover {
+  transform: translateY(-4px);
+}
+
+.group:hover::before {
+  opacity: 1;
+}
+
+.groupTitle {
+  font-family: var(--font-mono-var), var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ether);
+  margin-bottom: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .groups {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .groups {
+    grid-template-columns: 1fr;
+  }
+}

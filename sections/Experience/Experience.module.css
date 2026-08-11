@@ -1,0 +1,104 @@
+.experience {}
+
+.timeline {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 0 1.75rem;
+  position: relative;
+}
+
+/* Node + line */
+.node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.3rem;
+  position: relative;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-ether), var(--color-spectral));
+  flex-shrink: 0;
+  box-shadow: 0 0 14px rgba(167,139,250,0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.line {
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-ether), var(--color-spectral));
+  flex: 1;
+  margin-top: 4px;
+  opacity: 0.3;
+  min-height: 2.5rem;
+}
+
+/* Card */
+.card {
+  border-radius: 1rem;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 250ms ease;
+}
+.card:hover { transform: translateX(4px); }
+.card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--color-ether), var(--color-spectral));
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+.card:hover::before { opacity: 0.8; }
+
+.meta {
+  margin-bottom: 0.3rem;
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  color: var(--color-spectral);
+  letter-spacing: 0.05em;
+}
+
+.role {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-mercury);
+  margin-bottom: 0.15rem;
+}
+
+.company {
+  font-size: 0.9rem;
+  color: var(--color-ether);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}

@@ -1,0 +1,121 @@
+.contact {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.void {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+}
+
+.ring {
+  position: absolute;
+  width: min(70vw, 560px);
+  height: min(70vw, 560px);
+  border-radius: 50%;
+  border: 1px solid rgba(167, 139, 250, 0.28);
+  box-shadow:
+    0 0 80px rgba(167, 139, 250, 0.12) inset,
+    0 0 60px rgba(45, 212, 191, 0.06);
+  animation: spin 28s linear infinite;
+}
+
+.ring2 {
+  width: min(88vw, 720px);
+  height: min(88vw, 720px);
+  border-color: rgba(45, 212, 191, 0.18);
+  animation-duration: 42s;
+  animation-direction: reverse;
+}
+
+.horizon {
+  position: absolute;
+  width: min(28vw, 220px);
+  height: min(28vw, 220px);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, rgba(3, 3, 4, 1) 0%, rgba(3, 3, 4, 0.92) 42%, transparent 70%),
+    radial-gradient(circle at 35% 30%, rgba(167, 139, 250, 0.25), transparent 55%);
+  box-shadow: 0 0 100px rgba(167, 139, 250, 0.18);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  gap: 2rem;
+}
+
+.heading {
+  font-size: clamp(2rem, 5vw, 4rem);
+  max-width: 700px;
+}
+
+.subtext {
+  font-size: 1rem;
+  color: var(--color-mercury-dim);
+  max-width: 480px;
+  line-height: 1.8;
+}
+
+.emailBtn {
+  font-size: 1rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  width: 52px;
+  height: 52px;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-mercury-dim);
+  text-decoration: none;
+  transition: color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.socialLink:hover {
+  color: var(--color-ether);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(167, 139, 250, 0.2);
+}
+
+.footer {
+  font-size: 0.78rem;
+  color: var(--color-mercury-dim);
+  opacity: 0.5;
+  line-height: 1.8;
+  margin-top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ring,
+  .ring2 {
+    animation: none;
+  }
+}

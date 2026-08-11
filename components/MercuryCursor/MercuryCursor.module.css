@@ -1,0 +1,44 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  margin-top: calc(var(--cursor-size) / -2);
+  margin-left: calc(var(--cursor-size) / -2);
+  pointer-events: none;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 300ms ease;
+}
+
+.inner {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-mercury);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background-color: var(--cursor-color);
+  border-radius: 50%;
+  opacity: 0.3;
+  filter: blur(8px);
+  transition: all 400ms var(--ease-smooth);
+}
+
+.glow.hovering {
+  opacity: 0.5;
+  filter: blur(12px);
+  background-color: var(--color-ether);
+}
+
+/* Hide on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .cursor { display: none; }
+}

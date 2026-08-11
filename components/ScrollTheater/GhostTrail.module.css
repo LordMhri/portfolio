@@ -1,0 +1,29 @@
+.trail {
+  position: fixed;
+  z-index: 4;
+  pointer-events: none;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  background: rgba(167, 139, 250, 0.04);
+  box-shadow: 0 0 24px rgba(167, 139, 250, 0.08);
+  animation: ghostFade 320ms var(--ease-smooth, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+}
+
+@keyframes ghostFade {
+  0% {
+    opacity: 0.28;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.02) translateY(-6px);
+    filter: blur(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trail {
+    display: none;
+  }
+}
