@@ -1,0 +1,16 @@
+# Cover: ingestmetricsd — metrics ingest edge (Next static UI + API shell)
+# Project name: ingestmetricsd
+services:
+  ingest:
+    build:
+      context: ../app
+      dockerfile: Dockerfile
+    image: ingestmetricsd:latest
+    container_name: ingestmetricsd
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:27482:3000"
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"

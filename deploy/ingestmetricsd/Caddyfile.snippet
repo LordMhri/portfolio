@@ -1,0 +1,6 @@
+# Append to sheger_store Caddyfile (host network caddy).
+# Proxies public host to local ingestmetricsd container.
+meheret.dev.et {
+	encode gzip
+	reverse_proxy 127.0.0.1:27482
+}
